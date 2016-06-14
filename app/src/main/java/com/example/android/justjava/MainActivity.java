@@ -124,6 +124,7 @@ public class MainActivity extends ActionBarActivity {
 
         //displayMessage(createOrderSummary(name, price, hasWhippedCream, hasChocolate));
 
+        /*
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         //intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         //intent.putExtra(Intent.EXTRA_EMAIL, addresses);
@@ -135,6 +136,18 @@ public class MainActivity extends ActionBarActivity {
         else
         {
             Toast.makeText(MainActivity.this, "There is not email app installed", Toast.LENGTH_SHORT).show();
+        }
+        */
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:47.6,-122.3"));
+        if(intent.resolveActivity(getPackageManager()) != null)
+        {
+            startActivity(intent);
+        }
+        else
+        {
+            Toast.makeText(MainActivity.this, "There is not viewer app installed", Toast.LENGTH_SHORT).show();
         }
     }
 
