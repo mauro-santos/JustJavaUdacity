@@ -42,7 +42,7 @@ public class MainActivity extends ActionBarActivity {
      */
     public void increment(View view) {
         if (quantity == 100) {
-            Toast.makeText(MainActivity.this, "You cannot upper than 100 cups", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, getString(R.string.warning_increment), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -56,7 +56,7 @@ public class MainActivity extends ActionBarActivity {
      */
     public void decrement(View view) {
         if (quantity == 1) {
-            Toast.makeText(MainActivity.this, "You cannot less than 1 cup", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, getString(R.string.warning_decrement), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -90,12 +90,12 @@ public class MainActivity extends ActionBarActivity {
      * @return text summary.
      */
     private String createOrderSummary(String name, int price, boolean hasWhippedCream, boolean hasChocolate) {
-        String message = "Name: " + name
-                + "\nAdd whipped cream? " + hasWhippedCream
-                + "\nAdd chocolate? " + hasChocolate
-                + "\nQuantity: " + quantity
-                + "\nTotal: $" + price
-                + "\nThank You!";
+        String message = getString(R.string.name) + ": " + name
+                + "\n" + getString(R.string.whipped_cream_added) + " " + hasWhippedCream
+                + "\n" + getString(R.string.chocolate_added) + " " + hasChocolate
+                + "\n" + getString(R.string.quantity) + ": " + quantity
+                + "\n" + getString(R.string.total) + price
+                + "\n" + getString(R.string.thank_you);
         return message;
     }
 
@@ -122,7 +122,7 @@ public class MainActivity extends ActionBarActivity {
         displayMessage(priceMessage);
         */
 
-        //displayMessage(createOrderSummary(name, price, hasWhippedCream, hasChocolate));
+        displayMessage(createOrderSummary(name, price, hasWhippedCream, hasChocolate));
 
         /*
         Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -139,6 +139,7 @@ public class MainActivity extends ActionBarActivity {
         }
         */
 
+        /*
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.setData(Uri.parse("geo:47.6,-122.3"));
         if(intent.resolveActivity(getPackageManager()) != null)
@@ -149,6 +150,7 @@ public class MainActivity extends ActionBarActivity {
         {
             Toast.makeText(MainActivity.this, "There is not viewer app installed", Toast.LENGTH_SHORT).show();
         }
+        */
     }
 
     /**

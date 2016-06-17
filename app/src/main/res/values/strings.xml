@@ -1,3 +1,50 @@
 <resources>
     <string name="app_name">Just Java</string>
+
+    <!-- Header text for the identification the person [CHAR LIMIT=30] -->
+    <string name="name">Name</string>
+
+    <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
+    <string name="toppings">Toppings</string>
+
+    <!-- Header text for the list of toppings item [CHAR LIMIT=20] -->
+    <string name="whipped_cream">Whipped cream</string>
+
+    <!-- Header text for the list of toppings item [CHAR LIMIT=20] -->
+    <string name="chocolate">Chocolate</string>
+
+    <!-- Header text for the quantity [CHAR LIMIT=20] -->
+    <string name="quantity">Quantity</string>
+
+    <!-- Header text for the quantity minus [CHAR LIMIT=10] -->
+    <string name="quantity_minus">-</string>
+
+    <!-- Header text for the quantity value [CHAR LIMIT=10] -->
+    <string name="quantity_value">2</string>
+
+    <!-- Header text for the quantity plus [CHAR LIMIT=10] -->
+    <string name="quantity_plus">+</string>
+
+    <!-- Header text for the order summary [CHAR LIMIT=20] -->
+    <string name="order_summary">Order Summary</string>
+
+    <!-- Header text for the price [CHAR LIMIT=10] -->
+    <string name="price">$10.00</string>
+
+    <!-- Header text for the order bottom [CHAR LIMIT=20] -->
+    <string name="order">order</string>
+
+    <!-- Header text for the increment bottom warning [CHAR LIMIT=2] -->
+    <string name="warning_increment">You cannot upper than 100 cups</string>
+
+    <!-- Header text for the decrement bottom warning [CHAR LIMIT=2] -->
+    <string name="warning_decrement">You cannot less than 1 cup</string>
+
+    <string name="whipped_cream_added">Add whipped cream?</string>
+
+    <string name="chocolate_added">Add chocolate?</string>
+
+    <string name="total">Total: $</string>
+
+    <string name="thank_you">Thank You!</string>
 </resources>
