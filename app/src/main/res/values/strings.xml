@@ -1,8 +1,5 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Just Java</string>
-
-    <!-- Header text for the identification the person [CHAR LIMIT=30] -->
-    <string name="name">Name</string>
 
     <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
     <string name="toppings">Toppings</string>
@@ -40,11 +37,23 @@
     <!-- Header text for the decrement bottom warning [CHAR LIMIT=2] -->
     <string name="warning_decrement">You cannot less than 1 cup</string>
 
-    <string name="whipped_cream_added">Add whipped cream?</string>
+    <string name="order_summary_whipped_cream">Add whipped cream? <xliff:g id="addWhippedCream" example="true">%b</xliff:g></string>
 
-    <string name="chocolate_added">Add chocolate?</string>
+    <string name="order_summary_chocolate">Add chocolate? <xliff:g id="addChocolate" example="true">%b</xliff:g></string>
 
-    <string name="total">Total: $</string>
+    <string name="order_summary_quantity">Quantity: <xliff:g id="quantity" example="2">%d</xliff:g></string>
 
+    <string name="order_summary_price">Total: <xliff:g id="quantity" example="$10">%s</xliff:g></string>
+
+    <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
     <string name="thank_you">Thank You!</string>
+
+    <string name="simbolo_moeda">$</string>
+
+    <string name="name">Name</string>
+
+    <!--
+        Name for the order summary. It will be shown in the format of "Name: Amy" where Amy is the user's name. [CHAR LIMIT=NONE]
+    -->
+    <string name="order_summary_name">Name: <xliff:g id="name" example="Amy">%s</xliff:g> </string>
 </resources>

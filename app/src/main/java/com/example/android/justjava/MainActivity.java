@@ -21,7 +21,7 @@ import java.text.NumberFormat;
 public class MainActivity extends ActionBarActivity {
 
     int quantity = 2;
-    int priceCoffe = 5;
+    int priceCoffee = 5;
     int priceWhippedCream = 1;
     int priceChocolate = 2;
 
@@ -31,10 +31,10 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         CheckBox checkboxWhippedCream = (CheckBox) findViewById(R.id.checkboxWhippedCream);
-        checkboxWhippedCream.setText(checkboxWhippedCream.getText().toString() + " $" + priceWhippedCream);
+        checkboxWhippedCream.setText(checkboxWhippedCream.getText().toString() + " " + getString(R.string.simbolo_moeda) + priceWhippedCream);
 
         CheckBox checkboxChocolate = (CheckBox) findViewById(R.id.checkboxChocolate);
-        checkboxChocolate.setText(checkboxChocolate.getText().toString() + " $" + priceChocolate);
+        checkboxChocolate.setText(checkboxChocolate.getText().toString() + " " + getString(R.string.simbolo_moeda) + priceChocolate);
     }
 
     /**
@@ -48,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
 
         quantity += 1;
         display(quantity);
-        //displayPrice(quantity * priceCoffe);
+        //displayPrice(quantity * priceCoffee);
     }
 
     /**
@@ -62,7 +62,7 @@ public class MainActivity extends ActionBarActivity {
 
         quantity -= 1;
         display(quantity);
-        //displayPrice(quantity * priceCoffe);
+        //displayPrice(quantity * priceCoffee);
     }
 
     /**
@@ -71,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
      * @param quantity is the number of cups of coffee ordered
      */
     private int calculatePrice(boolean addWhippedCream, boolean addChocolate) {
-        int price = priceCoffe;
+        int price = priceCoffee;
 
         if (addWhippedCream) {
             price += priceWhippedCream;
@@ -90,11 +90,11 @@ public class MainActivity extends ActionBarActivity {
      * @return text summary.
      */
     private String createOrderSummary(String name, int price, boolean hasWhippedCream, boolean hasChocolate) {
-        String message = getString(R.string.name) + ": " + name
-                + "\n" + getString(R.string.whipped_cream_added) + " " + hasWhippedCream
-                + "\n" + getString(R.string.chocolate_added) + " " + hasChocolate
-                + "\n" + getString(R.string.quantity) + ": " + quantity
-                + "\n" + getString(R.string.total) + price
+        String message = getString(R.string.order_summary_name, name)
+                + "\n" + getString(R.string.order_summary_whipped_cream, hasWhippedCream)
+                + "\n" + getString(R.string.order_summary_chocolate, hasChocolate)
+                + "\n" + getString(R.string.order_summary_quantity, quantity)
+                + "\n" + getString(R.string.order_summary_price, NumberFormat.getCurrencyInstance().format(price))
                 + "\n" + getString(R.string.thank_you);
         return message;
     }
